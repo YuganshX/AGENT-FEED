@@ -1,0 +1,18 @@
+{
+    "name": "autonoumous-persona-agent",
+    "version": "0.1.0",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "dev": "wrangler dev",
+        "deploy": "wrangler deploy",
+        "typecheck": "tsc --noEmit",
+        "db:local": "wrangler d1 migrations apply AGENT_DB --local",
+        "db:remote": "wrangler d1 migrations apply AGENT_DB --remote"
+    },
+    "devDependencies": {
+        "@cloudfare/workers-types": "^4.20260731.0",
+        "typescript": "^5.9.2",
+        "wrangler": "^4.27.0"
+    }
+}
