@@ -40,7 +40,7 @@ export interface Candidate {
     url: string;
     content: string;
     publishedAt?: string;
-    scoreHint: number;
+    scoreHint?: number;
 }
 
 export interface MemoryResult {
