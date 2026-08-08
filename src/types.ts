@@ -1,9 +1,9 @@
 export interface Env {
     AGENT_DB: D1Database;
     BREETH_API_KEY: string;
-    OPEN_API_KEY: string;
+    GEMINI_API_KEY: string;
     TAVILY_API_KEY: string;
-    OPENAI_MODEL?: string;
+    GEMINI_MODEL?: string;
     BREETH_BASE_URL?: string;
     TAVILY_BASE_URL?: string;
 }
@@ -24,7 +24,7 @@ export interface AgentConfig {
     voice: string[];
     editorialPrinciples: string[];
     discoveryQueries: string[];
-    publishedThreshold: number;
+    publishThreshold: number;
 }
 
 export interface AgentRecord {

@@ -1,0 +1,21 @@
+{
+    "$schema": "node_modules/wrangler/config-schema.json",
+    "name": "autonomous-persona-agent",
+    "main": "src/index.ts",
+    "compatibility_date": "2026-08-01",
+    "triggers": {
+        "crons": ["0 */2 * * *"]
+    },
+    "d1_databases": [
+        {
+        "binding": "AGENT_DB",
+        "database_name": "autonomous-persona-agent",
+        "database_id": "f6d1f47d-59a7-4e2a-83e9-ed2ba14443bf"
+        }
+    ],
+    "vars": {
+        "GEMINI_MODEL": "gemini-2.5-flash",
+        "BREETH_BASE_URL": "https://api.thebreeth.com",
+        "TAVILY_BASE_URL": "https://api.tavily.com"
+    }
+}

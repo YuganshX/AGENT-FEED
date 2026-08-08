@@ -97,7 +97,7 @@ export async function getFeed(env: Env, agentId: string): Promise<FeedPost[]> {
             createdAt: post.created_at,
             text: post.text,
             rationale: post.rationale,
-            sources: sourceRows.results.map((row) => row.url),
+            sources: sourceRows.results.map((row: any) => row.url),
         });
     }
 
