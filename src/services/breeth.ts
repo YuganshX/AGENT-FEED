@@ -14,6 +14,8 @@ async function breethRequest<T>(
         headers: {
             Authorization: `Bearer ${env.BREETH_API_KEY}`,
             "Content-Type": "application/json",
+            "User-Agent": "curl/8.0",
+            "Accept": "application/json"
         },
         body: JSON.stringify(body),
     });
