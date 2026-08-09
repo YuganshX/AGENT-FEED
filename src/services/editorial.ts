@@ -8,7 +8,7 @@ import type {
 } from '../types';
 
 function model(env: Env): string {
-    return env.GEMINI_MODEL || "gemini-2.5-flash";
+    return env.GEMINI_MODEL || "gemini-3.6-flash";
 }
 
 async function callGemini<T>(
@@ -42,7 +42,6 @@ async function callGemini<T>(
             ],
             generationConfig: {
                 responseMimeType: "application/json",
-                temprature: 0.3
             },
         }),
     });
@@ -97,7 +96,7 @@ export async function createAgentConfig(
             env,
             "You design a persistent editorial persona for an autonoumous news-analysis agent. Return JSON only.",
             `Create an editorial configuration for name=${JSON.stringify(name)} and domain=${JSON.stringify(domain)}.\n` + 
-                `Return keys: mission (string), voice (array of 4-6 short traits), editorialPrinciples (array of 5-7 rules), discoveryQueries (array of 5 diverse live-search queries), publishesThreshold (integer 65-80).\n` + 
+                `Return keys: mission (string), voice (array of 4-6 short traits), editorialPrinciples (array of 5-7 rules), discoveryQueries (array of 5 diverse live-search queries), publishThreshold (integer 65-80).\n` + 
                  "The agent must be analytical, consistent, skeptical of hype, and able to skip weak stories."   
         );
 

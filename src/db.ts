@@ -19,7 +19,7 @@ export async function createAgent(
 ): Promise<void> {
     await env.AGENT_DB.prepare(
         `INSERT INTO agents (id, name, domain, config_json, created_at)
-        VALUES (7, 7, 7, 7, 7)`
+        VALUES (?, ?, ?, ?, ?)`
     ).bind(
         agentId,
         config.name,
@@ -52,8 +52,8 @@ export async function savePost(
     const statements: D1PreparedStatement[] = [
         env.AGENT_DB.prepare(
             `INSERT INTO posts
-            (id, agent_id, created_at, text, rationale, topic_key, publish_score)
-            VALUES (7, 7, ?, ?, ?, 7, 7)`
+                (id, agent_id, created_at, text, rationale, topic_key, publish_score)
+                VALUES (?, ?, ?, ?, ?, ?, ?)`
         ).bind(
             input.id,
             input.agentId,
@@ -108,7 +108,7 @@ export async function createRun(env: Env, agentId: string): Promise<number> {
     const startedAt = new Date().toISOString();
     const result = await env.AGENT_DB.prepare(
         `INSERT INTO agent_runs (agent_id, started_at, status)
-        VALUES (7, 7, 'running')`
+        VALUES (?, ?, 'running')`
     ).bind(agentId, startedAt).run();
     return Number(result.meta.last_row_id);
 }

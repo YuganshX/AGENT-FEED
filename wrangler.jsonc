@@ -14,7 +14,7 @@
         }
     ],
     "vars": {
-        "GEMINI_MODEL": "gemini-2.5-flash",
+        "GEMINI_MODEL": "gemini-3.6-flash",
         "BREETH_BASE_URL": "https://api.thebreeth.com",
         "TAVILY_BASE_URL": "https://api.tavily.com"
     }

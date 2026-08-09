@@ -59,7 +59,7 @@ export async function runAgent(env: Env, agent: AgentRecord): Promise<void> {
         const validIndex = 
             decision.selectedIndex !== null &&
             Number.isInteger(decision.selectedIndex) &&
-            decision.selectedIndex >- 0 &&
+            decision.selectedIndex >= 0 &&
             decision.selectedIndex < candidates.length;
 
             if(

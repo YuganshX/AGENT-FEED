@@ -14,7 +14,7 @@ CREATE TABLE IF NOT EXISTS posts (
  created_at TEXT NOT NULL,
  text TEXT NOT NULL,
  rationale TEXT NOT NULL,
- topic_key TEXT NOT. NULL,
+ topic_key TEXT NOT NULL,
  publish_score INTEGER NOT NULL,
  FOREIGN KEY (agent_id) REFERENCES agents(id)
 );
